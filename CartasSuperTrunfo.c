@@ -1,17 +1,20 @@
 #include <stdio.h>
+#include <locale.h>
 
-int main(){
+int main() {
+    setlocale(LC_ALL, ""); 
+
     printf("Desafio Super Trunfo - Países!\n");
 
-    char nome[20], codigo[20], estado[20];
+    char nome[50], codigo[20], estado[50];
     int populacao, turistico;
-    float area, pib;
+    double area, pib;
 
     printf("Digite o estado da cidade: \n");
-    scanf(" %19[^\n]", estado);
+    scanf(" %49[^\n]", estado);
 
     printf("Digite o nome da cidade: \n");
-    scanf(" %19[^\n]", nome);
+    scanf(" %49[^\n]", nome);
 
     printf("Digite o código da cidade: \n");
     scanf(" %19[^\n]", codigo);
@@ -23,27 +26,19 @@ int main(){
     scanf("%d", &turistico);
 
     printf("Área em km²: \n");
-    scanf("%f", &area);
+    scanf("%lf", &area);
 
     printf("PIB: \n");
-    scanf("%f", &pib);
+    scanf("%lf", &pib);
 
-    printf("\n=== Dados da Cidade ===\n");
+    printf("Dados da Cidade\n");
     printf("Estado: %s\n", estado);
     printf("Nome: %s\n", nome);
     printf("Código: %s\n", codigo);
-    printf("População: %d\n", populacao);
+    printf("População: %'d\n", populacao); 
     printf("Pontos turísticos: %d\n", turistico);
-    printf("Área: %.2f km²\n", area);
-    printf("PIB: %.2f\n", pib);
+    printf("Área: %'.2lf km²\n", area);  
+    printf("PIB: %'.2lf\n", pib);  
 
-
-
-
- 
-
-    
-
-
-
+    return 0;
 }
